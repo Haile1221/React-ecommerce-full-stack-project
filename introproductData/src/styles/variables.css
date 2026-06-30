@@ -1,0 +1,8 @@
+:root {
+  --primary: #00ff88;
+  --bg-dark: #121212;
+  --card-bg: #1e1e1e;
+  --text-main: #ffffff;
+  --text-muted: #a0a0a0;
+  --max-width: 1200px;
+}

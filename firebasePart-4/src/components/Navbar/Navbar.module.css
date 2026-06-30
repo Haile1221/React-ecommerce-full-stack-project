@@ -1,0 +1,96 @@
+.navbar {
+  background: var(--nav-bg);
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #333;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo { font-size: 1.6rem; font-weight: 800; color: white; }
+.logo span { color: var(--primary); }
+
+.links { display: flex; align-items: center; }
+
+.links a {
+  color: var(--text-muted);
+  margin-left: 25px;
+  font-weight: 500;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.links a:hover, .active { color: var(--primary); }
+
+.badge {
+  background: var(--primary);
+  color: #000;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+.loginBtn {
+  border: 1px solid var(--primary);
+  padding: 6px 15px;
+  border-radius: 6px;
+  color: var(--primary) !important;
+}
+
+/* ========================================================
+   IDENTITY PROFILE MATRIX LAYOUT
+   ======================================================== */
+
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 20px;
+}
+
+.userEmail {
+  color: var(--text-muted, #888888);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.usernameHighlight {
+  color: var(--primary, #0071e3);
+  font-weight: 800;
+}
+
+/* ========================================================
+   DESTRUCTIVE SESSION ACTION INTERCHANGES
+   ======================================================== */
+
+.logoutBtn {
+  background: none;
+  border: 1px solid #ff4d4d;
+  color: #ff4d4d;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 0.8rem;
+}
+
+.logoutBtn:hover {
+  background: #ff4d4d;
+  color: #000000; /* Flat black layout contrast override targets maximum click readability */
+}
+

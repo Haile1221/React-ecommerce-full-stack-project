@@ -1,0 +1,309 @@
+/* ========================================================
+   LAYOUT WRAPPERS & CONTAINERS
+   ======================================================== */
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  min-height: 80vh;
+  width: 100%;
+}
+
+.card {
+  background: var(--card-bg, #111111);
+  padding: 40px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 440px;
+  text-align: left; /* Left-aligned layout for natural left-to-right text scanning */
+  border: 1px solid #2a2a2a;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #888888;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* ========================================================
+   ALERT MESSAGES (FEEDBACK LAYER)
+   ======================================================== */
+
+.successAlert,
+.errorAlert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.successAlert {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid #10b981;
+  color: #10b981;
+}
+
+.errorAlert {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid #ef4444;
+  color: #ef4444;
+}
+
+/* ========================================================
+   FORM GROUPS & INTERACTIVE ELEMENTS
+   ======================================================== */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #aaaaaa;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  background: #1a1a1a;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary-color, #0071e3);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+}
+
+/* ========================================================
+   PASSWORD TOGGLE PIPELINE
+   ======================================================== */
+
+.passwordWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.passwordWrapper .input {
+  padding-right: 70px; /* Leaves clear clearance for the absolute mask action button */
+}
+
+.showBtn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #888888;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: color 0.2s ease;
+}
+
+.showBtn:hover {
+  color: #ffffff;
+}
+
+/* ========================================================
+   ACTION TRIGGER BUTTONS
+   ======================================================== */
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--btn-primary-bg, #ffffff);
+  color: var(--btn-primary-text, #000000);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+  margin-top: 8px;
+}
+
+.btn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  background: #333333;
+  color: #777777;
+  cursor: not-allowed;
+}
+
+/* ========================================================
+   ERROR ANCHORS & FOOTER NAVIGATION
+   ======================================================== */
+
+.errorText {
+  color: #ef4444;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.footer {
+  margin-top: 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.footer p {
+  color: #666666;
+  margin: 0;
+}
+
+.link {
+  color: var(--primary-color, #0071e3);
+  text-decoration: none;
+  font-weight: 500;
+  transition: text-decoration 0.2s ease;
+}
+
+.linkWarning {
+  color: #888888;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.link:hover,
+.linkWarning:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+/* ========================================================
+   TERMS & CONDITIONS SEGMENTATION
+   ======================================================== */
+
+.terms {
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+/* ACTIVITY: Flexbox Alignment Layout */
+/* Organizes the checkbox alignment and text alignment along a clean horizontal grid path */
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start; /* Keeps box locked near the top line even across multiline legal descriptions */
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #bdbdbd;
+  cursor: pointer;
+  user-select: none; /* Prevents text highlights if double-clicked accidentally */
+}
+
+/* ACTIVITY: Custom CSS Checkbox UI Styling Override */
+/* Resets native OS rendering parameters to implement a dark theme visual experience */
+.checkboxLabel input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none; /* Prevents iOS and Safari from overriding layout configurations */
+  min-width: 18px;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  border: 2px solid #444444;
+  border-radius: 5px;
+  background: #1e1e1e;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+/* ACTIVITY: Interactive State Transition Schemes */
+.checkboxLabel input[type="checkbox"]:hover {
+  border-color: #00ff88;
+}
+
+/* ACTIVITY: Active Selected Accent Fill Pipeline */
+.checkboxLabel input[type="checkbox"]:checked {
+  background: #00ff88;
+  border-color: #00ff88;
+}
+
+/* ACTIVITY: Checkmark Symbol Pseudo-Element Injection */
+/* Renders a clean system check symbol perfectly inside the center of our custom bounding container */
+.checkboxLabel input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -58%); /* Precision sub-pixel offset compensation for line alignments */
+  color: #121212;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* ACTIVITY: Text Layout Flow Assignment */
+.checkboxLabel span {
+  flex: 1; /* Instructs text box element to grow into all remaining whitespace layout parameters */
+}
+
+/* ACTIVITY: Legal Document Router Navigation Targets */
+.checkboxLabel a {
+  color: #00ff88;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.checkboxLabel a:hover {
+  color: #00cc6f;
+  text-decoration: underline;
+}
+
+/* ACTIVITY: Input Validation Alert Formatting */
+/* Provides separation rules to cleanly offset error messages from checkboxes */
+.errorText {
+  display: block;
+  margin-top: 8px;
+  margin-left: 30px; /* Indents error text precisely below the legal text description block */
+  color: #ff6b6b;
+  font-size: 13px;
+} 
+

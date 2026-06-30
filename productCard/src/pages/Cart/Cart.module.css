@@ -1,0 +1,17 @@
+.container {
+    max-width: var(--max-width);
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.title {
+    font-size: 2rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+}
+
+.emptyMsg {
+    color: var(--text-muted);
+    padding: 50px 0;
+    text-align: center;
+}
